@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: darkmagenta;
+}
+.copyButtonContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h4 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 36px;
+        color: white;
+    }
+    input {
+        margin-top: 20px;
+        padding: 15px 20px;
+        font-size: 24px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        outline: none;
+    }
+    .btn {
+        margin-left: 30px;
+        padding: 15px 50px;
+        font-size: 24px;
+        border: none;
+        border-radius: 10px;
+        background-color: darkblue;
+        color: white;
+        cursor: pointer;
+        transition: all 0.4s ease;    
+        &:hover {
+        background-color: aqua;
+        color: darkmagenta;
+        }
+    }
+}
