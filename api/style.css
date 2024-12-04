@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(243, 240, 240);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+h1 {
+    margin: 5px 0;
+}
+p {
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.5rem;
+    width: 800px;
+    height: 150px;
+    text-wrap: wrap;
+    border: 5px solid black;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 20px;
+    overflow: auto;
+}
+button {
+    position: absolute;
+    padding: 25px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+    top: 450px;
+}

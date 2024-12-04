@@ -27,42 +27,37 @@ function rand(min, max) {
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
-
-btn.addEventListener('click', e => {
-    e.preventDefault();
-    let x = rand (0, 17);
-    vardas.value = pool[x];    
-});
-
-console.log(pool);
-
-
-
   
-// Function to shuffle an array - maiso eiles tvarka del gaveju.
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-    console.log(array);
     return array;       
 };
 
-// Function to assign Secret Santa pairs
 function assignSecretSanta(pool) {
-    const givers = [...pool];
+    const dovanotojai = [...pool];
     let receivers = pool;    
-    while (receivers.some((person, index) => person === givers[index])) {
+    while (receivers.some((person, index) => person === dovanotojai[index])) {
         receivers = shuffle([...pool]);
     };      
-    const pairs = givers.map((giver, index) => ({giver, receiver: receivers[index]}));  
-    return pairs;
+    const poros = dovanotojai.map((dovanotojas, index) => ({dovanotojas, receiver: receivers[index]}));  
+    return poros;
 };
 
 const secretSantaPairs = assignSecretSanta(pool);
 
 console.log("Secret Santa Pairs:");
 secretSantaPairs.forEach(pair => {
-    console.log(`${pair.giver} -> ${pair.receiver}`);
+    console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
+});
+
+btn.addEventListener('click', e => {
+    e.preventDefault();
+    let ivestis = vardas.value
+    secretSantaPairs.forEach(pair => {
+        if (ivestis == pair.dovanotojas) {
+            vardas.value = pair.receiver;            
+        }})
 });
