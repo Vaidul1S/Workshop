@@ -54,7 +54,7 @@
         hsl(0deg 100% 50%) 100%
       );
     background-size: 200%; 
-    animation: grad 5s infinite alternate;
+    animation: grad 3s infinite ease alternate;
 }
 
 @keyframes grad {
@@ -77,21 +77,18 @@
     justify-content: center;
     align-items: center;
     img {
-        height: 250px;
+        height: 30%;
         animation: drebato 0.1s infinite alternate ease;
-        animation-delay: 3s;
+        animation-delay: 2s;
     }    
 }
 
 @keyframes drebato {
     0% {
-        transform: rotate(-3deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
+        transform: rotate(-5deg) translateX(-10%);
+    }    
     100% {
-        transform: rotate(3deg);
+        transform: rotate(5deg) translateX(10%);
     }
 }
 .wroom {
@@ -125,7 +122,7 @@
     justify-content: center;
     align-items: center;
     img {
-        width: 200px;
+        width: 15%;
         animation: beat infinite 1s ease;
     }
 }
