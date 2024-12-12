@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+}
+.disco {
+    background-image: url("./images/nata.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: green;
+    animation: danceFloor 3s ease-in-out infinite alternate;
+}
+
+@keyframes danceFloor {
+    0% {
+        background-color: green;
+    }
+    20% {
+        background-color: crimson;
+    }
+    40% {
+        background-color: yellow;
+    }
+    60% {
+        background-color: purple;
+    }
+    80% {
+        background-color: blue;
+    }
+    100% {
+        background-color: orangered;
+    }
+}
+
+.gradient {  
+    background-image: linear-gradient(
+        225deg,
+        hsl(120deg 100% 50%) 0%,
+        hsl(101deg 100% 48%) 19%,
+        hsl(92deg 100% 45%) 27%,
+        hsl(83deg 100% 43%) 34%,
+        hsl(75deg 100% 40%) 41%,
+        hsl(65deg 100% 37%) 47%,
+        hsl(55deg 100% 37%) 53%,
+        hsl(45deg 100% 40%) 59%,
+        hsl(37deg 100% 43%) 66%,
+        hsl(28deg 100% 45%) 73%,
+        hsl(19deg 100% 48%) 81%,
+        hsl(0deg 100% 50%) 100%
+      );
+    background-size: 200%; 
+    animation: grad 5s infinite alternate;
+}
+
+@keyframes grad {
+    0% {
+        background-position: 0% 100%
+    }
+    100% {
+        background-position: 100% 200%;
+    }
+    200% {
+        background-position: 0% 100%;
+    }
+}
+
+.pingvinas {
+    background-image: url("./images/kalnai.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        height: 250px;
+        animation: drebato 0.1s infinite alternate ease;
+        animation-delay: 3s;
+    }    
+}
+
+@keyframes drebato {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+.wroom {
+    position: relative;
+    max-width: 100%;
+}
+.road {    
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+.car {
+    width: 30%;
+    position: absolute;    
+    bottom: 130px;
+    animation: wroom 1s infinite;
+}
+
+@keyframes wroom {
+    0% {
+        transform: translateX(-100%);
+    }    
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.heart {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 200px;
+        animation: beat infinite 1s ease;
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(2);
+    }
+    75% {
+        transform: scale(2.5);
+    }
+    100% {
+        transform: scale(3);
+    }
+}
