@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(230deg,
+            hsl(120deg 100% 50%) 0%,
+            hsl(88deg 100% 46%) 13%,
+            hsl(70deg 100% 42%) 19%,
+            hsl(52deg 100% 43%) 25%,
+            hsl(39deg 100% 50%) 30%,
+            hsl(34deg 100% 50%) 35%,
+            hsl(27deg 100% 50%) 40%,
+            hsl(19deg 100% 50%) 46%,
+            hsl(0deg 100% 50%) 51%,
+            hsl(325deg 100% 43%) 58%,
+            hsl(300deg 100% 35%) 66%,
+            hsl(275deg 100% 43%) 76%,
+            hsl(240deg 100% 50%) 99%);
+    background-size: 400%;
+    animation: grad 3s infinite ease alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes grad {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }    
+}
+
+.cube {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rotate 4s infinite;
+}
+.cube:nth-child(2) {
+    animation-delay: 1s;
+    top: 30%;
+    left: 80%;
+}
+.cube:nth-child(3) {
+    animation-delay: 3s;
+    top: 40%;
+    left: 20%;
+}
+.cube:nth-child(4) {
+    animation-delay: 8s;
+    top: 50%;
+    left: 70%;
+}
+.cube:nth-child(5) {
+    animation-delay: 2s;
+    top: 60%;
+    left: 10%;
+}
+.cube:nth-child(6) {
+    animation-delay: 7s;
+    top: 70%;
+    left: 55%;
+}
+.cube:nth-child(7) {
+    animation-delay: 4s;
+    top: 60%;
+    left: 45%;
+}
+.cube:nth-child(8) {
+    animation-delay: 5s;
+    top: 80%;
+    left: 20%;
+}
+.cube:nth-child(9) {
+    animation-delay: 10s;
+    top: 15%;
+    left: 90%;
+}
+.cube:nth-child(10) {
+    animation-delay: 1s;
+    top: 25%;
+    left: 75%;
+}
+.cube:nth-child(11) {
+    animation-delay: 11s;
+    top: 35%;
+    left: 10%;
+}
+.cube:nth-child(12) {
+    animation-delay: 2s;
+    top: 45%;
+    left: 85%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale(1) rotate(0); opacity: 1;
+    }    
+    100% {
+        transform: scale(14) rotate(1000deg); opacity: 0;
+    }
+}
+h1 {
+    font-size: 40px;
+    animation: rotate2 5s infinite ease-in-out;
+    background-image: linear-gradient(
+    270deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(284deg 100% 19%) 26%,
+    hsl(309deg 100% 20%) 36%,
+    hsl(324deg 100% 25%) 42%,
+    hsl(334deg 100% 28%) 46%,
+    hsl(340deg 100% 31%) 48%,
+    hsl(0deg 59% 41%) 50%,
+    hsl(356deg 74% 33%) 52%,
+    hsl(352deg 100% 25%) 54%,
+    hsl(0deg 100% 21%) 57%,
+    hsl(0deg 100% 18%) 63%,
+    hsl(0deg 100% 15%) 73%,
+    hsl(0deg 0% 0%) 100%
+  );
+    background-clip: text;
+    color: transparent;
+}
+@keyframes rotate2 {
+    0% {
+        transform-origin: top left;
+        transform: rotate(0) scale(1);
+    }    
+    100% {
+        transform-origin: bottom right;
+        transform: rotate(-720deg) scale(2);
+    }
+}

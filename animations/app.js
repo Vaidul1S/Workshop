@@ -1,1 +1,3 @@
-console.log('12.11');
+let x = [2];
+x = 10;
+console.log(x);
