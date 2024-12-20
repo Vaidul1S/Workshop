@@ -16,24 +16,26 @@
     hsl(175deg 100% 12%) 100%
   );
     text-align: center;
-    padding: 30px 100px;
+    padding: 3% 7%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }
 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 3%;
 }
 .board {
-    width: 600px;
-    height: 600px;    
-    margin: 50px auto;
+    max-width: 500px;
+    width: 350px;
+    max-height: 500px;
+    height: 350px;    
+    margin: 4% auto;
     background-color:#72B01D;  
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
+    gap: 4%;
+    padding: 1%;    
 }
 .cell {
     width: 30%;
@@ -46,7 +48,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 64px;
     font-weight: 800;
     &:hover {
         background-color: #B2FFA980;
@@ -57,7 +59,7 @@ h1 {
     padding: 10px 20px;
     cursor: pointer;    
     max-width: 500px;
-    margin: 30px auto;
+    margin: 5% auto;
     border-radius: 50px;
     &:hover {
         background-color:#7C728780;
@@ -67,4 +69,14 @@ h1 {
     color: #7C7287;
     background-color: chocolate;
     font-size: 100px;
+}
+#whoWon {
+    font-size: 32px;
+    font-weight: 800;
+    color: chocolate;
+}
+#whoGoes {
+    font-size: 32px;
+    font-weight: 800;
+    color: chocolate;
 }
