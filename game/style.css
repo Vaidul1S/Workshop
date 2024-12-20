@@ -43,6 +43,11 @@ h1 {
     cursor: pointer;
     border-radius: 3px;
     transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: 800;
     &:hover {
         background-color: #B2FFA980;
     }
@@ -57,4 +62,9 @@ h1 {
     &:hover {
         background-color:#7C728780;
     }
+}
+.winColor {
+    color: #7C7287;
+    background-color: chocolate;
+    font-size: 100px;
 }
