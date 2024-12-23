@@ -1,8 +1,8 @@
 const cell = document.querySelectorAll('.cell');
-const isNaujo = document.querySelector('.new');
+const isNaujo = document.getElementById('new');
 const whoGoes = document.getElementById('whoGoes');
 const whoWon = document.getElementById('whoWon');
-const board = document.querySelector('.board');
+const board = document.getElementById('board');
 const info = document.getElementById('info');
 
 let step = '';
@@ -36,36 +36,34 @@ const endGame = _ => {
     info.style.visibility = 'hidden';
 };
 
-const crossWon = _ => {
+const winCondion = _ => {
     for (let i = 0; i < winCombo.length; i++) {
         if (cell[winCombo[i][0]].classList.contains('cross') && cell[winCombo[i][1]].classList.contains('cross') && cell[winCombo[i][2]].classList.contains('cross')) {
             cell[winCombo[i][0]].classList.add('winColor');
             cell[winCombo[i][1]].classList.add('winColor');
             cell[winCombo[i][2]].classList.add('winColor');
             whoWon.innerText = ' Kryžiukai!';
+            whoWon.style.visibility = 'visible';
+            endGame();
+            return true;
+        }
+        if (cell[winCombo[i][0]].classList.contains('circle') && cell[winCombo[i][1]].classList.contains('circle') && cell[winCombo[i][2]].classList.contains('circle')) {
+            cell[winCombo[i][0]].classList.add('winColor');
+            cell[winCombo[i][1]].classList.add('winColor');
+            cell[winCombo[i][2]].classList.add('winColor');
+            whoWon.innerText = ' Nuliukai!';
+            whoWon.style.visibility = 'visible';
             endGame();
             return true;
         }
     }
     return false;
 };
-const circleWon = _ => {
-    for (let i = 0; i < winCombo.length; i++) {
-        if (cell[winCombo[i][0]].classList.contains('circle') && cell[winCombo[i][1]].classList.contains('circle') && cell[winCombo[i][2]].classList.contains('circle')) {
-            cell[winCombo[i][0]].classList.add('winColor');
-            cell[winCombo[i][1]].classList.add('winColor');
-            cell[winCombo[i][2]].classList.add('winColor');
-            whoWon.innerText = ' Nuliukai!';
-            endGame();
-            return true;
-        }
-    }
-    return false
-};
 
 const noWinner = _ => {
-    if (!crossWon() && !circleWon() && counter > 9) {
+    if (!winCondion() && counter > 9) {
         whoWon.innerText = ' Lygiosios';
+        whoWon.style.visibility = 'visible';
         info.style.visibility = 'hidden';
     }
 };
@@ -79,22 +77,15 @@ cell.forEach(item => {
             } else if (step == 'circle') {
                 item.innerText = 'O';
             }
-            who();
-            crossWon();
-            circleWon();
-            noWinner();
+            who();            
+            winCondion();
+            noWinner();            
         }
     })
 });
 
 isNaujo.addEventListener('click', _ => {
     cell.forEach(item => {
-        document.location.reload();
-        // item.classList.remove('circle', 'cross', 'winColor');
-        // item.innerText = ''; 
-        // whoWon.innerText = '';
-        // board.style.pointerEvents = '';
+        document.location.reload();        
     })
 }); 
-
-
