@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    max-width: 1220px;
+    margin: 200px auto;
+}
+.testimonials {
+    max-width: 1120px;
+    min-height: 450px;
+    background-color: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+    border-radius: 24px;
+}
