@@ -49,6 +49,7 @@ btn.addEventListener('click', e =>{
 
     const popUp = document.querySelector('[data-popUp]');    
     if (validation) {
+        users.push({name: name.value, email: email.value, age: age.value, phone: phone.value, password: psw.value});
         name.value = '';
         email.value = '';
         age.value = '';
@@ -60,5 +61,6 @@ btn.addEventListener('click', e =>{
             popUp.style.display = 'none';
         }, 4000);
     }
-
+    console.log('Users:', users);
+    
 });
