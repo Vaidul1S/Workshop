@@ -51,11 +51,17 @@ btn.addEventListener('click', e =>{
     if (validation) {
         users.push({name: name.value, email: email.value, age: age.value, phone: phone.value, password: psw.value});
         name.value = '';
+        name.placeholder = '';
         email.value = '';
+        email.placeholder = '';
         age.value = '';
+        age.placeholder = '';
         phone.value = '';
+        phone.placeholder = '';
         psw.value = '';
-        pswCheck.value = '';        
+        psw.placeholder = '';
+        pswCheck.value = '';  
+        pswCheck.placeholder = '';      
         popUp.style.display = 'block';        
         setTimeout( _ => {                
             popUp.style.display = 'none';
