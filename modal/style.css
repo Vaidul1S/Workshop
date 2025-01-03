@@ -45,8 +45,7 @@
 .modal {
     position: fixed;
     width: 100%;
-    height: 100%;
-    background-color: #32cd324d;
+    height: 100%;    
     z-index: 1;
     top: 0;
     left: 0;
