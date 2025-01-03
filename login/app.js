@@ -20,10 +20,25 @@ btn.addEventListener('click', e =>{
         validation = false;
     }
 
-    const age = document.querySelector('[data-age]');
-    if (isNaN(age.value) || age.value < 18 || age.value > 120) {
-        age.value = '';
-        age.placeholder = 'Neteisingai įvestas amžius!';
+    const date = document.querySelector('[data-age]').value;       
+    const bDate = new Date(date);
+    const today = new Date();       
+        
+    let age = today.getFullYear() - bDate.getFullYear();
+    let months = today.getMonth() - bDate.getMonth();
+    let days = today.getDay() - bDate.getMonth();
+    if (months < 0 || (months === 0 && days < 0)) {
+        age--;
+    }     
+    
+    if (isNaN(age) || age < 18 || age > 120) {
+        const ageText = document.querySelector('[data-age-text]');
+        ageText.style.color = 'red';
+        ageText.innerText = 'Neteisingai įvestas amžius!';
+        setTimeout( _ => {                
+            ageText.style.color = 'white';
+            ageText.innerText = 'Registruotis gali tik gyvi ir pilnamečiai asmenys';
+        }, 3000);
         validation = false;
     }
 
@@ -49,13 +64,11 @@ btn.addEventListener('click', e =>{
 
     const popUp = document.querySelector('[data-popUp]');    
     if (validation) {
-        users.push({name: name.value, email: email.value, age: age.value, phone: phone.value, password: psw.value});
+        users.push({name: name.value, email: email.value, date: date, phone: phone.value, password: psw.value});
         name.value = '';
         name.placeholder = '';
         email.value = '';
-        email.placeholder = '';
-        age.value = '';
-        age.placeholder = '';
+        email.placeholder = '';        
         phone.value = '';
         phone.placeholder = '';
         psw.value = '';
