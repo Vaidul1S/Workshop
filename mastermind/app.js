@@ -3,6 +3,7 @@ const btn = document.querySelector('#btn');
 const ats = document.querySelector('#ats');
 const naujas = document.querySelector('#naujas');
 const attempts = document.querySelector('#bandymai');
+const teisingas = document.querySelector('#teisingas');
 
 const rand = (min, max) => {
     const minCeiled = Math.ceil(min);
@@ -11,15 +12,23 @@ const rand = (min, max) => {
 };
 
 const endGame = _ => {
-    if (bandymai > 0) {
-        attempts.innerText = `Likę bandymų ${bandymai}`
+    if (bandymai > 0) {        
+        attempts.innerText = `Likę bandymų ${bandymai}`;
     } else {
+        teisingas.innerText = `Teisingas atsakymas buvo ${skaicius} 😏`;
         btn.style.pointerEvents = 'none';
-        attempts.innerText = ` Apgailestaujame, jūs pralaimėjote 😧, spauskite "Naujas žaidimas"`
+        attempts.innerText = ` Apgailestaujame, jūs pralaimėjote, spauskite "Naujas žaidimas".`;
     }
 };
 
-let skaicius = `${rand(1000, 9999)}`;
+const numberGenerator = _ => {
+    let number = '';
+    while (number[0] == number[1] || number[0] == number[2] || number[0] == number[3] || number[1] == number[2] || number[1] == number[3] || number[2] == number[3]) {
+        number = `${rand(1000, 9999)}`;
+    };
+    return number
+}; 
+let skaicius = `${numberGenerator()}`;
 let bandymai = 10;
 console.log(skaicius);
 
@@ -31,26 +40,25 @@ btn.addEventListener('click', _ => {
         let teisingas = 0;
         let pozicija = 0;
         for (let i = 0; i < guess.value.length; i++) {
-            if (skaicius.includes(guess.value[i]) && guess.value[i] != guess.value[i + 1] && guess.value[i] != guess.value[i + 2] && guess.value[i] != guess.value[i + 3]) {
-                teisingas++;
-                if (skaicius[i] === guess.value[i]) {
+            if (skaicius.includes(guess.value[i])) {
+                teisingas++;                
+            }
+            if (skaicius[i] === guess.value[i]) {
                     pozicija++;
-                }
             }
         }
-        console.log(pozicija);
 
         if (pozicija === 4) {
+            btn.style.pointerEvents = 'none';
             ats.innerText = 'Valio! Jūs atspėjote!';
         } else {
-            ats.innerText = `Jūs atpėjote ${teisingas} skaičius ir iš jų ${pozicija} yra teisingoje pozicijoje.`
+            ats.innerText = `Jūs atpėjote ${teisingas} skaičius ir iš jų ${pozicija} yra teisingoje pozicijoje.`;
+
         }
         bandymai--;
     }
     endGame();
 });
-
-
 
 naujas.addEventListener('click', _ => {
     document.location.reload();
