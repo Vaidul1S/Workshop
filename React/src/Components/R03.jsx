@@ -1,7 +1,18 @@
 import { useState } from "react";
 import Bala from "./Bala";
 
-
+const seaPlaners = [
+    { id: 1, type: 'man', name: 'Lina', color: 'blue' },
+    { id: 2, type: 'car', name: 'Opel', color: 'red' },
+    { id: 3, type: 'animal', name: 'Vilkas', color: 'green' },
+    { id: 4, type: 'fish', name: 'Ungurys', color: 'yellow' },
+    { id: 5, type: 'man', name: 'Tomas', color: 'green' },
+    { id: 6, type: 'animal', name: 'Bebras', color: 'red' },
+    { id: 7, type: 'animal', name: 'Barsukas', color: 'green' },
+    { id: 8, type: 'car', name: 'MB', color: 'blue' },
+    { id: 9, type: 'car', name: 'ZIL', color: 'red' },
+    { id: 10, type: 'man', name: 'Teta Toma', color: 'yellow' },
+  ];
 
 // REACT List
 
@@ -19,25 +30,14 @@ import Bala from "./Bala";
 // Visuose uždaviniuose name savybę reikia nudažyti spalva, kuri yra color savybėje.
 
 export default function R03() {
-const seaPlaners = [
-    { id: 1, type: 'man', name: 'Lina', color: 'blue' },
-    { id: 2, type: 'car', name: 'Opel', color: 'red' },
-    { id: 3, type: 'animal', name: 'Vilkas', color: 'green' },
-    { id: 4, type: 'fish', name: 'Ungurys', color: 'yellow' },
-    { id: 5, type: 'man', name: 'Tomas', color: 'green' },
-    { id: 6, type: 'animal', name: 'Bebras', color: 'red' },
-    { id: 7, type: 'animal', name: 'Barsukas', color: 'green' },
-    { id: 8, type: 'car', name: 'MB', color: 'blue' },
-    { id: 9, type: 'car', name: 'ZIL', color: 'red' },
-    { id: 10, type: 'man', name: 'Teta Toma', color: 'yellow' },
-  ];
+
   const [array, setArray] = useState(seaPlaners);
 
   
 
     return (
         <>
-          <Bala masyvas={array}/>
+          <Bala array={array}/>
         </>
     )
 }

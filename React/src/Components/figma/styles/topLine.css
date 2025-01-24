@@ -1,0 +1,32 @@
+.bg {
+    background-color: var(--dGreen);
+    min-height: 45px;
+}
+
+.banner-text {
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.banner-links {
+    position: absolute;
+    right: 0;
+    a {
+        margin-left: 10px;
+    }
+}
+
+.currency-link {
+    font-weight: 400;
+    color: var(--white)
+}
+
+.support-link {    
+    color: var(--white);
+}
