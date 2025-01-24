@@ -1,0 +1,28 @@
+.header-bg {
+    min-height: 60px;
+    background-color: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: inherit;
+}
+
+.header-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-links a {
+    color: black;
+    font-weight: 400;
+    font-size: 17px;
+    transition: all 0.3s;
+    &:hover {
+        font-weight: 600;
+    }
+}
