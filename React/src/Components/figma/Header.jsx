@@ -1,5 +1,7 @@
 import './styles/header.css';
 import headerLogo from './Images/headerLogo.svg';
+import search from './Images/search.svg';
+import cart from './Images/shopIcon.svg';
 
 export default function Header() {
 
@@ -15,9 +17,11 @@ export default function Header() {
                     <a href="#">About us</a>
                     <a href="#">Contact us</a>
                 </div>
-                <div>
+                <div className='header-right'>
                     <input type='text' placeholder='Search'></input>
-                    <a href="#">🔎 🛒</a>
+                    <img src={search} alt="search" />
+                    <a href="#" className='shopcart'><img src={cart} alt="cart" />3</a>
+                    
                 </div>
             </div>
         </div>

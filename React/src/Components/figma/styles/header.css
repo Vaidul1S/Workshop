@@ -21,8 +21,32 @@
     color: black;
     font-weight: 400;
     font-size: 17px;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
     &:hover {
+        color: var(--dGreen);
         font-weight: 600;
+        text-shadow: 2px 2px 1px rgba(80,128,107,0.5);
     }
+}
+
+.shopcart {
+    padding: 0 25px;
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    /* border-left: 1px solid var(--grey); */
+}
+
+.shopcart::before {
+    content: "";
+    height: 46px;
+    width: 1px;
+    background-color: var(--grey);
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+.shopcart img {
+    margin-right: 5px;
 }
