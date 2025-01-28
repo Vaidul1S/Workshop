@@ -50,7 +50,7 @@ btn.addEventListener('click', e =>{
     }
 
     const psw = document.querySelector('[data-password]');
-    if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(psw.value)) {
+    if (!/(?=.*[a-zA-Z\d])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(psw.value)) {
         psw.value = '';
         psw.placeholder = 'Neteisingai įvestas slaptažodis!';
     }
