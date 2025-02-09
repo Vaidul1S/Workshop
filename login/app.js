@@ -26,7 +26,7 @@ btn.addEventListener('click', e =>{
         
     let age = today.getFullYear() - bDate.getFullYear();
     let months = today.getMonth() - bDate.getMonth();
-    let days = today.getDay() - bDate.getMonth();
+    let days = today.getDate() - bDate.getDate();
     if (months < 0 || (months === 0 && days < 0)) {
         age--;
     }     
