@@ -11,8 +11,8 @@ function App() {
       <div className="app">
         <header className="app-header">
           <h4>React ND</h4>
-          {/* <R01 />
-          <R02 /> */}
+          <R01 />
+          <R02 />
           <R03 />
 
         </header>
