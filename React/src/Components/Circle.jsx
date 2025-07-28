@@ -8,6 +8,9 @@ export default function Circle({shape, number}) {
             margin: '20px',
             transition: 'all 0.5s',
             borderRadius: shape + '%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
         }}>
             {number}
         </div>

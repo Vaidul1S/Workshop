@@ -1,15 +1,26 @@
 import './App.css';
-import Header from './Components/figma/Header';
-import TopLine from './Components/figma/TopLine';
+import './buttons.scss';
+import R01 from './Components/R01';
+import R02 from './Components/R02';
+import R03 from './Components/R03';
 
+function App() {
 
-export default function App() {
- 
   return (
     <>
-        <TopLine />
-        <Header />
+      <div className="app">
+        <header className="app-header">
+          <h4>React ND</h4>
+          <R01 />
+          <R02 />
+          <R03 />
+
+        </header>
+      </div>
+      
     </>
+
   );
 }
 
+export default App;

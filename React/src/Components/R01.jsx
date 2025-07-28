@@ -47,20 +47,21 @@ export default function Nd01() {
         <>
             <Circle shape={shape} number={number}/>
             <div>
-                <button className="button91 tang" onClick={change}>Click</button>
-                <button className="button91 tang" onClick={addNumber}>Click</button>
+                <button className="button91 hgreen" onClick={change}>Change Shape</button>
+                <button className="button91 hgreen" onClick={addNumber}>Add Number</button>
                 <h3>{counter}</h3>
-                <button className="button91 tang" onClick={_ => handleNumber(+1)}>+1</button>
-                <button className="button91 tang" onClick={_ => handleNumber(-3)}>-3</button>
+                <button className="button91 cadet" onClick={_ => handleNumber(+1)}>+1</button>
+                <button className="button91 cadet" onClick={_ => setCounter(0)}>Reset</button>
+                <button className="button91 cadet" onClick={_ => handleNumber(-3)}>-3</button>
             </div>
             <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
             }}>{square.map((square, index) => <Square key={index} color={square.color}/>)}</div>
             <div>
-                <button className="button91 tang" onClick={_ => addSq('red')}>Add Red</button>
-                <button className="button91 tang" onClick={_ => addSq('blue')}>Add Blue</button>
-                <button className="button91 tang" onClick={_ => setSquare([])}>Reset</button>
+                <button className="button91 red" onClick={_ => addSq('red')}>Add Red</button>
+                <button className="button91 dblue" onClick={_ => addSq('blue')}>Add Blue</button>
+                <button className="button91 hgreen" onClick={_ => setSquare([])}>Reset</button>
             </div>
 
 
