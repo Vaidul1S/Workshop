@@ -80,5 +80,15 @@ function shuffleR(arrays) {
     return arrays;
 };
 
+function assignSecretSantaR(poolRestriction) {
+    const dovanotojai = [...poolRestriction];
+    let receivers = poolRestriction;
+    while (receivers.some((person, index) => person === dovanotojai[index])) {
+        receivers = shuffle([...poolRestriction]);
+    };
+    const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
+    return poros;
+};
+
 let rev = shuffleR(poolRestriction);
 console.log(rev);
