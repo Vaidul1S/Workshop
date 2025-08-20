@@ -70,14 +70,15 @@ btn.addEventListener('click', e => {
     })
 });
 
-function shuffleR(array) {
-    
-    for (let i = array.length - 1; i > 0; i--) {
+function shuffleR(arrays) {
+    arrays.forEach(array => {
+       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+    } 
+    });    
+    return arrays;
 };
 
-let rev = shuffle(poolRestriction);
+let rev = shuffleR(poolRestriction);
 console.log(rev);
