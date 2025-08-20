@@ -19,6 +19,13 @@ const pool = [
     'Radvilė'
 ];
 
+const poolRestriction = [
+    ['Močiutė'],
+    ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
+    ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja', 'Neringa', 'Emilis'],
+    ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
+];
+
 const vardas = document.querySelector('input');
 const btn = document.querySelector('.btn');
 
@@ -27,22 +34,22 @@ function rand(min, max) {
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
-  
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
-    return array;       
+    return array;
 };
 
 function assignSecretSanta(pool) {
     const dovanotojai = [...pool];
-    let receivers = pool;    
+    let receivers = pool;
     while (receivers.some((person, index) => person === dovanotojai[index])) {
         receivers = shuffle([...pool]);
-    };      
-    const poros = dovanotojai.map((dovanotojas, index) => ({dovanotojas, receiver: receivers[index]}));  
+    };
+    const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
     return poros;
 };
 
@@ -58,6 +65,7 @@ btn.addEventListener('click', e => {
     let ivestis = vardas.value
     secretSantaPairs.forEach(pair => {
         if (ivestis == pair.dovanotojas) {
-            vardas.value = pair.receiver;            
-        }})
+            vardas.value = pair.receiver;
+        }
+    })
 });
