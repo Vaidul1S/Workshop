@@ -26,8 +26,10 @@ const poolRestriction = [
     ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
 ];
 
-const vardas = document.querySelector('input');
+const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
+const vardas2 = document.querySelector('.input2');
+const btn2 = document.querySelector('.btn2');
 
 function rand(min, max) {
     const minCeiled = Math.ceil(min);
@@ -90,5 +92,19 @@ function assignSecretSantaR(poolRestriction) {
     return poros;
 };
 
-let rev = shuffleR(poolRestriction);
-console.log(rev);
+const secretSantaPairsR = assignSecretSanta(poolRestriction);
+
+console.log("Secret Santa Pairs R:");
+secretSantaPairsR.forEach(pair => {
+    console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
+});
+
+btn2.addEventListener('click', e => {
+    e.preventDefault();
+    let ivestis = vardas.value
+    secretSantaPairsR.forEach(pair => {
+        if (ivestis == pair.dovanotojas) {
+            vardas.value = pair.receiver;
+        }
+    })
+});
