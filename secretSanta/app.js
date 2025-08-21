@@ -95,28 +95,18 @@ function assignSecretSantaR(poolRestriction) {
 
 const secretSantaPairsR = assignSecretSantaR(poolRestriction);
 
-console.log('------------------------');
-console.log("Secret Santa Pairs R:");
-console.log('------------------------');
+// console.log('------------------------');
+// console.log("Secret Santa Pairs R:");
+// console.log('------------------------');
 
-secretSantaPairsR.forEach(pair => {
-    console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
-});
-
-btn2.addEventListener('click', e => {
-    e.preventDefault();
-    let ivestis = vardas2.value
-    secretSantaPairsR.forEach(pair => {
-        if (ivestis == pair.dovanotojas) {
-            vardas2.value = pair.receiver;
-        }
-    })
-});
+// secretSantaPairsR.forEach(pair => {
+//     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
+// });
 
 function makeSecretSanta(groups) {
     const people = groups.flat();
 
-    while (true) { // retry until valid
+    while (true) { 
         const givers = shuffle([...people]);
         const receivers = shuffle([...people]);
         const pairs = [];
@@ -147,3 +137,13 @@ pairs.forEach(pair => {
     console.log(`${pair[0]} -> ${pair[1]}`);
 });
 console.log('------------------------');
+
+btn2.addEventListener('click', e => {
+    e.preventDefault();
+    let ivestis = vardas2.value
+    pairs.forEach(pair => {
+        if (ivestis == pair[0]) {
+            vardas2.value = pair[1];
+        }
+    })
+});
