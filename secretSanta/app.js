@@ -72,36 +72,15 @@ btn.addEventListener('click', e => {
     })
 });
 
-function shuffleR(arrays) {
-    arrays.forEach(array => {
-       for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    } 
-    });    
-    return arrays;
-};
-
-function assignSecretSantaR(poolRestriction) {
-    const dovanotojai = [...poolRestriction].flat();
-    let receivers = shuffle(shuffleR([...poolRestriction])).flat();
-    while (receivers.some((person, index) => person === dovanotojai[index])) {
-        receivers = shuffle(shuffleR([...poolRestriction])).flat();
-    };
-    
-    const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
-    return poros;
-};
-
-const secretSantaPairsR = assignSecretSantaR(poolRestriction);
-
-// console.log('------------------------');
-// console.log("Secret Santa Pairs R:");
-// console.log('------------------------');
-
-// secretSantaPairsR.forEach(pair => {
-//     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
-// });
+// function shuffleR(arrays) {
+//     arrays.forEach(array => {
+//        for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]];
+//     } 
+//     });    
+//     return arrays;
+// };
 
 function makeSecretSanta(groups) {
     const people = groups.flat();
