@@ -112,3 +112,40 @@ btn2.addEventListener('click', e => {
         }
     })
 });
+
+function randomPairing(groups) {
+    const people = groups.flat();
+    const pairs = [];
+    const used = new Set();
+
+    while (used.size < people.length) {
+        const available = people.filter(p => !used.has(p));
+        if (available.length < 2) break; // safety
+
+        const a = available[0];
+        const groupA = groups.find(g => g.includes(a));
+
+        // pick random partner from a different group
+        const possiblePartners = available.filter(
+            p => !groupA.includes(p)
+        );
+
+        if (possiblePartners.length === 0) {
+            // fallback if stuck
+            break;
+        }
+
+        const b = possiblePartners[Math.floor(Math.random() * possiblePartners.length)];
+        pairs.push([a, b]);
+        used.add(a);
+        used.add(b);
+    }
+
+    return pairs;
+}
+
+const pairs = randomPairing(poolRestriction);
+console.log(pairs);
+console.log('------------------------');
+console.log("Total pairs:", pairs.length);
+console.log('------------------------');
