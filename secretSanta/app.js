@@ -113,64 +113,35 @@ btn2.addEventListener('click', e => {
     })
 });
 
-// function randomPairing(groups) {
-//     const people = groups.flat();
-//     const pairs = [];
-//     const used = new Set();
-
-//     while (used.size < people.length) {
-//         const available = people.filter(p => !used.has(p));
-//         if (available.length < 2) break; // safety
-
-//         const a = available[0];
-//         const groupA = groups.find(g => g.includes(a));
-
-//         // pick random partner from a different group
-//         const possiblePartners = available.filter(
-//             p => !groupA.includes(p)
-//         );
-
-//         if (possiblePartners.length === 0) {
-//             // fallback if stuck
-//             break;
-//         }
-
-//         const b = possiblePartners[Math.floor(Math.random() * possiblePartners.length)];
-//         pairs.push([a, b]);
-//         used.add(a);
-//         used.add(b);
-//     }
-
-//     return pairs;
-// }
-
-function randomPairing(groups) {
+function makeSecretSanta(groups) {
     const people = groups.flat();
-    
-    while (true) {  
-        const shuffled = shuffle([...people]);
+
+    while (true) { // retry until valid
+        const givers = shuffle([...people]);
+        const receivers = shuffle([...people]);
         const pairs = [];
         let valid = true;
 
-        for (let i = 0; i < shuffled.length; i += 2) {
-            const a = shuffled[i];
-            const b = shuffled[i + 1];
+        for (let i = 0; i < givers.length; i++) {
+            const giver = givers[i];
+            const receiver = receivers[i];
 
-            const groupA = groups.find(g => g.includes(a));
-            const groupB = groups.find(g => g.includes(b));
+            const groupG = groups.find(g => g.includes(giver));
+            const groupR = groups.find(g => g.includes(receiver));
 
-            if (groupA === groupB) {
+            if (giver === receiver || groupG === groupR) {
                 valid = false;
-                break; 
+                break;
             }
-            pairs.push([a, b]);
+
+            pairs.push([giver, receiver]);
         }
 
         if (valid) return pairs;
     }
 }
 
-const pairs = randomPairing(poolRestriction);
+const pairs = makeSecretSanta(poolRestriction);
 console.log('------------------------');
 pairs.forEach(pair => {
     console.log(`${pair[0]} -> ${pair[1]}`);
