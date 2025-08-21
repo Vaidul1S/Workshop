@@ -147,7 +147,7 @@ btn2.addEventListener('click', e => {
 function randomPairing(groups) {
     const people = groups.flat();
     
-    while (true) {  // keep retrying until successful
+    while (true) {  
         const shuffled = shuffle([...people]);
         const pairs = [];
         let valid = true;
@@ -161,7 +161,7 @@ function randomPairing(groups) {
 
             if (groupA === groupB) {
                 valid = false;
-                break; // invalid pairing, restart
+                break; 
             }
             pairs.push([a, b]);
         }
