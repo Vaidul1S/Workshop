@@ -145,7 +145,8 @@ function randomPairing(groups) {
 }
 
 const pairs = randomPairing(poolRestriction);
-console.log(pairs);
 console.log('------------------------');
-console.log("Total pairs:", pairs.length);
+pairs.forEach(pair => {
+    console.log(`${pair[0]} -> ${pair[1]}`);
+});
 console.log('------------------------');
