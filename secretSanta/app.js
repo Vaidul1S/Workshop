@@ -57,10 +57,10 @@ function assignSecretSanta(pool) {
 
 const secretSantaPairs = assignSecretSanta(pool);
 
-console.log("Secret Santa Pairs:");
-secretSantaPairs.forEach(pair => {
-    console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
-});
+// console.log("Secret Santa Pairs:");
+// secretSantaPairs.forEach(pair => {
+//     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
+// });
 
 btn.addEventListener('click', e => {
     e.preventDefault();
@@ -83,28 +83,32 @@ function shuffleR(arrays) {
 };
 
 function assignSecretSantaR(poolRestriction) {
-    const dovanotojai = [...poolRestriction];
-    let receivers = poolRestriction;
+    const dovanotojai = [...poolRestriction].flat();
+    let receivers = shuffle(shuffleR([...poolRestriction])).flat();
     while (receivers.some((person, index) => person === dovanotojai[index])) {
-        receivers = shuffle([...poolRestriction]);
+        receivers = shuffle(shuffleR([...poolRestriction])).flat();
     };
+    
     const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
     return poros;
 };
 
-const secretSantaPairsR = assignSecretSanta(poolRestriction);
+const secretSantaPairsR = assignSecretSantaR(poolRestriction);
 
+console.log('------------------------');
 console.log("Secret Santa Pairs R:");
+console.log('------------------------');
+
 secretSantaPairsR.forEach(pair => {
     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
 });
 
 btn2.addEventListener('click', e => {
     e.preventDefault();
-    let ivestis = vardas.value
+    let ivestis = vardas2.value
     secretSantaPairsR.forEach(pair => {
         if (ivestis == pair.dovanotojas) {
-            vardas.value = pair.receiver;
+            vardas2.value = pair.receiver;
         }
     })
 });
