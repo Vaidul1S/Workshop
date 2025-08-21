@@ -113,35 +113,61 @@ btn2.addEventListener('click', e => {
     })
 });
 
+// function randomPairing(groups) {
+//     const people = groups.flat();
+//     const pairs = [];
+//     const used = new Set();
+
+//     while (used.size < people.length) {
+//         const available = people.filter(p => !used.has(p));
+//         if (available.length < 2) break; // safety
+
+//         const a = available[0];
+//         const groupA = groups.find(g => g.includes(a));
+
+//         // pick random partner from a different group
+//         const possiblePartners = available.filter(
+//             p => !groupA.includes(p)
+//         );
+
+//         if (possiblePartners.length === 0) {
+//             // fallback if stuck
+//             break;
+//         }
+
+//         const b = possiblePartners[Math.floor(Math.random() * possiblePartners.length)];
+//         pairs.push([a, b]);
+//         used.add(a);
+//         used.add(b);
+//     }
+
+//     return pairs;
+// }
+
 function randomPairing(groups) {
     const people = groups.flat();
-    const pairs = [];
-    const used = new Set();
+    
+    while (true) {  // keep retrying until successful
+        const shuffled = shuffle([...people]);
+        const pairs = [];
+        let valid = true;
 
-    while (used.size < people.length) {
-        const available = people.filter(p => !used.has(p));
-        if (available.length < 2) break; // safety
+        for (let i = 0; i < shuffled.length; i += 2) {
+            const a = shuffled[i];
+            const b = shuffled[i + 1];
 
-        const a = available[0];
-        const groupA = groups.find(g => g.includes(a));
+            const groupA = groups.find(g => g.includes(a));
+            const groupB = groups.find(g => g.includes(b));
 
-        // pick random partner from a different group
-        const possiblePartners = available.filter(
-            p => !groupA.includes(p)
-        );
-
-        if (possiblePartners.length === 0) {
-            // fallback if stuck
-            break;
+            if (groupA === groupB) {
+                valid = false;
+                break; // invalid pairing, restart
+            }
+            pairs.push([a, b]);
         }
 
-        const b = possiblePartners[Math.floor(Math.random() * possiblePartners.length)];
-        pairs.push([a, b]);
-        used.add(a);
-        used.add(b);
+        if (valid) return pairs;
     }
-
-    return pairs;
 }
 
 const pairs = randomPairing(poolRestriction);
