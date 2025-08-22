@@ -14,5 +14,5 @@ x.addEventListener('click', _ => {
     setTimeout( _ => {
         modalContent.classList.remove('slideUp');
         modal.style.display = 'none';
-    }, 1000);
+    }, 950);
 });
