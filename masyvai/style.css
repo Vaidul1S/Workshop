@@ -2,10 +2,14 @@ body {
     background-color: antiquewhite;
 }
 h1 {
-    margin: 40px 30px;
+    margin: 20px 30px;
+}
+p {
+    margin-left: 20px;
+    font-weight: bold;
 }
 section {
-    margin: 30px 20px;
+    margin: 20px 60px;
 }
 span {
     padding: 10px;
