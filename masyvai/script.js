@@ -123,20 +123,25 @@ section9.appendChild(Count);
 // Sukurkite sąrašą žmonių amžių. Išspausdinkite tik tuos, kurie yra vyresni nei 18.
 let ages = [12, 17, 22, 19, 15, 30, 18];
 let pilnaprociai = 0;
+const section10 = document.querySelector('#section10');
 
 for (let i = 0; i < ages.length; i++) {
     if (ages[i] > 18) {
-        console.log(ages[i]);
+        let div = document.createElement('span')
+        div.innerText = ages[i];
+        section10.appendChild(div);
     }
 }
-console.log('------------------------------------------------------------');
 
 // Skaičių dalybos liekanos tikrinimas
 // Sukurkite sąrašą skaičių. Išspausdinkite tik tuos skaičius, kurie, dalijant iš 2, turi liekaną.
 let numbers6 = [5, 8, 13, 22, 31, 40];
+const section11 = document.querySelector('#section11');
 
 for (let i = 0; i < numbers6.length; i++) {
     if (numbers6[i] % 2) {
-        console.log(numbers6[i]);
+        let div = document.createElement('span')
+        div.innerText = numbers6[i];
+        section11.appendChild(div);
     }
 }
