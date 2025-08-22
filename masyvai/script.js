@@ -88,33 +88,36 @@ for (let i = 0; i < numbers4.length; i++) {
         section7.appendChild(div);
     }
 }
-console.log('------------------------------------------------------------');
 
 // Didžiausio skaičiaus paieška sąraše
 // Sukurkite sąrašą skaičių ir raskite didžiausią skaičių. Tikrinkite kiekvieną reikšmę cikle.
 let numbers5 = [3, 45, 23, 67, 12, 90, 34];
 let didziausias = 0;
+const section8 = document.querySelector('#section8');
 
 for (let i = 0; i < numbers5.length; i++) {
     if (numbers5[i] > didziausias) {
         didziausias = numbers5[i];
     }
 }
-console.log(didziausias);
-console.log('------------------------------------------------------------');
+let biggest = document.createElement('span')
+biggest.innerText = didziausias;
+section8.appendChild(biggest);
 
 // Raidžių skaičiavimas žodyje
 // Sukurkite žodį ir suskaičiuokite, kiek kartų žodyje pasikartoja raidė „a“.
 let word = "banana";
 let countA = 0;
+const section9 = document.querySelector('#section9');
 
 for (let i = 0; i < word.length; i++) {
     if (word[i].includes('a')) {
         countA += 1;
     }
 }
-console.log(countA);
-console.log('------------------------------------------------------------');
+let Count = document.createElement('span')
+Count.innerText = countA;
+section9.appendChild(Count);
 
 // Amžių filtravimas sąraše
 // Sukurkite sąrašą žmonių amžių. Išspausdinkite tik tuos, kurie yra vyresni nei 18.
