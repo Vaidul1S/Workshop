@@ -18,7 +18,7 @@ body {
 }
 .buttonContainer h4 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 36px;
+  font-size: 42px;
   color: white;
 }
 .buttonContainer .formContainer {
@@ -26,6 +26,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.buttonContainer .formContainer h5 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 28px;
+  color: white;
+  margin-top: 15px;
 }
 .buttonContainer .formContainer input {
   margin: 20px 0;
