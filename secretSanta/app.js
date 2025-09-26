@@ -57,7 +57,7 @@ function assignSecretSanta(pool) {
 
 const secretSantaPairs = assignSecretSanta(pool);
 
-// console.log("Secret Santa Pairs:");
+// console.log("Secret Santa Pairs FFA:");
 // secretSantaPairs.forEach(pair => {
 //     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
 // });
@@ -92,7 +92,6 @@ function makeSecretSanta(groups) {
                 valid = false;
                 break;
             }
-
             pairs.push([giver, receiver]);
         }
 
@@ -102,6 +101,7 @@ function makeSecretSanta(groups) {
 
 const pairs = makeSecretSanta(poolRestriction);
 console.log('------------------------');
+console.log("Secret Santa Pairs with restrictions:");
 pairs.forEach(pair => {
     console.log(`${pair[0]} -> ${pair[1]}`);
 });
