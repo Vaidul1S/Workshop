@@ -100,12 +100,14 @@ function makeSecretSanta(groups) {
 }
 
 const pairs = makeSecretSanta(poolRestriction);
-console.log('------------------------');
+console.log('-------------------------------------');
 console.log("Secret Santa Pairs with restrictions:");
+console.log('-------------------------------------');
+
 pairs.forEach(pair => {
     console.log(`${pair[0]} -> ${pair[1]}`);
 });
-console.log('------------------------');
+console.log('-------------------------------------');
 
 btn2.addEventListener('click', e => {
     e.preventDefault();
