@@ -18,7 +18,7 @@ function showSlides(index) {
     dots.forEach((dot, i) => {
         dot.classList.remove('activeD')
     })
-    dots[index].classList.add('activeD');    
+    dots[index].classList.add('activeD');
 };
 
 function autoSlide() {
