@@ -26,12 +26,13 @@ const poolRestriction = [
     ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
 ];
 
-localStorage.setItem('santa', JSON.stringify(''));
+localStorage.setItem('santa', JSON.stringify(null));
 
 const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
 const vardas2 = document.querySelector('.input2');
 const btn2 = document.querySelector('.btn2');
+const result = document.querySelector('.result');
 
 function rand(min, max) {
     const minCeiled = Math.ceil(min);
@@ -113,11 +114,18 @@ console.log('-------------------------------------');
 
 btn2.addEventListener('click', e => {
     e.preventDefault();
-    let ivestis = vardas2.value
+    let ivestis = vardas2.value;
+
     pairs.forEach(pair => {
         if (ivestis == pair[0]) {
-            vardas2.value = pair[1];
+            result.innerHTML = pair[1];
         }
-    })
-    localStorage.setItem('santa', JSON.stringify(ivestis));
+    });
+
+    if (localStorage.getItem('santa') == null){
+        localStorage.setItem('santa', JSON.stringify(ivestis));
+    }
+    
+    vardas2.value = '';
+
 });

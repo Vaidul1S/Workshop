@@ -16,7 +16,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.buttonContainer h4 {
+.buttonContainer h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 42px;
   color: white;
@@ -28,7 +28,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.buttonContainer .formContainer h5 {
+.buttonContainer .formContainer h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 28px;
   color: white;
