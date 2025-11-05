@@ -122,7 +122,7 @@ btn2.addEventListener('click', e => {
         }
     });
 
-    if (localStorage.getItem('santa') == null){
+    if (JSON.parse(localStorage.getItem('santa')) == null){
         localStorage.setItem('santa', JSON.stringify(ivestis));
     }
     
