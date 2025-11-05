@@ -26,6 +26,8 @@ const poolRestriction = [
     ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
 ];
 
+localStorage.setItem('santa', JSON.stringify(''));
+
 const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
 const vardas2 = document.querySelector('.input2');
@@ -117,4 +119,5 @@ btn2.addEventListener('click', e => {
             vardas2.value = pair[1];
         }
     })
+    localStorage.setItem('santa', JSON.stringify(ivestis));
 });
