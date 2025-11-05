@@ -122,6 +122,8 @@ btn2.addEventListener('click', e => {
                 result.innerHTML = pair[0] + ' 🎁 ' + pair[1];
             }
         });
+    } else {
+        result.innerHTML = "nelysk kur nereikia!"
     }
 
 
