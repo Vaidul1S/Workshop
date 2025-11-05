@@ -123,7 +123,14 @@ btn2.addEventListener('click', e => {
     });
 
     if (JSON.parse(localStorage.getItem('santa')) == null){
-        localStorage.setItem('santa', JSON.stringify(ivestis));
+        let poolIndex;
+        poolRestriction.forEach(e => {
+            poolIndex = e.indexOf(ivestis);
+        })
+               
+        console.log(poolIndex);
+        
+        localStorage.setItem('santa', JSON.stringify(poolIndex));
     }
     
     vardas2.value = '';
