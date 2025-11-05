@@ -125,7 +125,10 @@ btn2.addEventListener('click', e => {
     if (JSON.parse(localStorage.getItem('santa')) == null){
         let poolIndex;
         poolRestriction.forEach(e => {
-            poolIndex = e.indexOf(ivestis);
+            if(e.indexOf(ivestis) > 0) {
+                poolIndex = e;
+            };
+            
         })
                
         console.log(poolIndex);
