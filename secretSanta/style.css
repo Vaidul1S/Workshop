@@ -65,3 +65,6 @@ body {
   background-color: aqua;
   color: darkmagenta;
 }
+.buttonContainer .formContainer .result {
+  text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px #0000ff;
+}
