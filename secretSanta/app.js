@@ -119,11 +119,13 @@ btn2.addEventListener('click', e => {
     if (localStorage.getItem('santa').includes(ivestis) || JSON.parse(localStorage.getItem('santa')) == null) {
         pairs.forEach(pair => {
             if (ivestis == pair[0]) {
+                result.style.color = 'white';
                 result.innerHTML = pair[0] + ' 🎁 ' + pair[1];
             }
         });
     } else {
-        result.innerHTML = "nelysk kur nereikia!"
+        result.style.color = 'red';
+        result.innerHTML = "Nešnipiniek!"
     }
 
 

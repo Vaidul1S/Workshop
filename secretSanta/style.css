@@ -35,13 +35,19 @@ body {
   margin-top: 15px;
 }
 .buttonContainer .formContainer input {
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   padding: 15px 20px;
   font-size: 24px;
   border: none;
   border-radius: 10px;
   text-align: center;
   outline: none;
+}
+.buttonContainer .formContainer .text {
+  color: white;
+  font-size: 14px;
+  margin: 5px 0;
+  text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px #0000ff;
 }
 .buttonContainer .formContainer .btn,
 .buttonContainer .formContainer .btn2 {
