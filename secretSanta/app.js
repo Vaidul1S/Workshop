@@ -78,7 +78,7 @@ btn.addEventListener('click', e => {
 function makeSecretSanta(groups) {
     const people = groups.flat();
 
-    while (true) { 
+    while (true) {
         const givers = shuffle([...people]);
         const receivers = shuffle([...people]);
         const pairs = [];
@@ -116,26 +116,29 @@ btn2.addEventListener('click', e => {
     e.preventDefault();
     let ivestis = vardas2.value;
 
-    pairs.forEach(pair => {
-        if (ivestis == pair[0]) {
-            result.innerHTML = pair[1];
-        }
-    });
+    if (localStorage.getItem('santa').includes(ivestis) || JSON.parse(localStorage.getItem('santa')) == null) {
+        pairs.forEach(pair => {
+            if (ivestis == pair[0]) {
+                result.innerHTML = pair[0] + ' 🎁 ' + pair[1];
+            }
+        });
+    }
 
-    if (JSON.parse(localStorage.getItem('santa')) == null){
+
+
+    if (JSON.parse(localStorage.getItem('santa')) == null) {
         let poolIndex;
         poolRestriction.forEach(e => {
-            if(e.indexOf(ivestis) > 0) {
+            if (e.indexOf(ivestis) > 0) {
                 poolIndex = e;
             };
-            
         })
-               
+
         console.log(poolIndex);
-        
+
         localStorage.setItem('santa', JSON.stringify(poolIndex));
     }
-    
+
     vardas2.value = '';
 
 });
