@@ -123,6 +123,7 @@ btn2.addEventListener('click', e => {
                 result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
             }
         });
+
     } else {
         poolRestriction.forEach(e => {
             if (e.includes(ivestis) > 0) {
@@ -132,7 +133,6 @@ btn2.addEventListener('click', e => {
                 result.innerHTML = '';
             }
         });
-
     }
 
     if (JSON.parse(localStorage.getItem('santa')) == null) {
