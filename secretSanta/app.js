@@ -128,8 +128,6 @@ btn2.addEventListener('click', e => {
         result.innerHTML = "Nešnipiniek!"
     }
 
-
-
     if (JSON.parse(localStorage.getItem('santa')) == null) {
         let poolIndex;
         poolRestriction.forEach(e => {
@@ -137,7 +135,10 @@ btn2.addEventListener('click', e => {
                 poolIndex = e;
             };
         })
-
+        if (poolIndex == undefined) {
+            poolIndex = null;
+        }
+        
         localStorage.setItem('santa', JSON.stringify(poolIndex));
     }
 
