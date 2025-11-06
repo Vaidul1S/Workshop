@@ -129,12 +129,11 @@ btn2.addEventListener('click', e => {
 
     } else {
         poolRestriction.forEach(e => {
-            if (e.includes(ivestis) > 0) {
+            if (e.includes(ivestis)) {             
                 result.style.color = 'red';
-                result.innerHTML = "Nešnipiniek!"
-            } else {
-                result.innerHTML = '';
-            }
+                result.innerHTML = "Nešnipiniek!";
+                
+            } 
         });
     }
 
