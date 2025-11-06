@@ -28,8 +28,8 @@ const poolRestriction = [
 
 localStorage.setItem('santa', JSON.stringify(null));
 
-const vardas = document.querySelector('.input');
-const btn = document.querySelector('.btn');
+// const vardas = document.querySelector('.input');
+// const btn = document.querySelector('.btn');
 const vardas2 = document.querySelector('.input2');
 const btn2 = document.querySelector('.btn2');
 const result = document.querySelector('.result');
@@ -48,32 +48,32 @@ function shuffle(array) {
     return array;
 };
 
-function assignSecretSanta(pool) {
-    const dovanotojai = [...pool];
-    let receivers = pool;
-    while (receivers.some((person, index) => person === dovanotojai[index])) {
-        receivers = shuffle([...pool]);
-    };
-    const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
-    return poros;
-};
+// function assignSecretSanta(pool) {
+//     const dovanotojai = [...pool];
+//     let receivers = pool;
+//     while (receivers.some((person, index) => person === dovanotojai[index])) {
+//         receivers = shuffle([...pool]);
+//     };
+//     const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
+//     return poros;
+// };
 
-const secretSantaPairs = assignSecretSanta(pool);
+// const secretSantaPairs = assignSecretSanta(pool);
 
 // console.log("Secret Santa Pairs FFA:");
 // secretSantaPairs.forEach(pair => {
 //     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
 // });
 
-btn.addEventListener('click', e => {
-    e.preventDefault();
-    let ivestis = vardas.value
-    secretSantaPairs.forEach(pair => {
-        if (ivestis == pair.dovanotojas) {
-            vardas.value = pair.receiver;
-        }
-    })
-});
+// btn.addEventListener('click', e => {
+//     e.preventDefault();
+//     let ivestis = vardas.value
+//     secretSantaPairs.forEach(pair => {
+//         if (ivestis == pair.dovanotojas) {
+//             vardas.value = pair.receiver;
+//         }
+//     })
+// });
 
 function makeSecretSanta(groups) {
     const people = groups.flat();
