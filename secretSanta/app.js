@@ -120,7 +120,7 @@ btn2.addEventListener('click', e => {
         pairs.forEach(pair => {
             if (ivestis == pair[0]) {
                 result.style.color = 'white';
-                result.innerHTML = pair[0] + ' 🎁 ' + pair[1];
+                result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
             }
         });
     } else {
@@ -137,8 +137,6 @@ btn2.addEventListener('click', e => {
                 poolIndex = e;
             };
         })
-
-        console.log(poolIndex);
 
         localStorage.setItem('santa', JSON.stringify(poolIndex));
     }
