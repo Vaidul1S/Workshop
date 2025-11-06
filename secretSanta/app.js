@@ -1,52 +1,26 @@
-const pool = [
-    'Močiutė',
-    'Dalia',
-    'Algirdas',
-    'Ramunė',
-    'Ernestas',
-    'Vaidas',
-    'Algimantas',
-    'Gražina',
-    'Darius',
-    'Darija',
-    'Evaldas',
-    'Austėja',
-    'Neringa',
-    'Emilis',
-    'Jurga',
-    'Tomas',
-    'Dovydas',
-    'Radvilė'
-];
-
-const poolRestriction = [
-    ['Močiutė'],
-    ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
-    ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja'],
-    ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
-];
-
-localStorage.setItem('santa', JSON.stringify(null));
+// const pool = [
+//     'Močiutė',
+//     'Dalia',
+//     'Algirdas',
+//     'Ramunė',
+//     'Ernestas',
+//     'Vaidas',
+//     'Algimantas',
+//     'Gražina',
+//     'Darius',
+//     'Darija',
+//     'Evaldas',
+//     'Austėja',
+//     'Neringa',
+//     'Emilis',
+//     'Jurga',
+//     'Tomas',
+//     'Dovydas',
+//     'Radvilė'
+// ];
 
 // const vardas = document.querySelector('.input');
 // const btn = document.querySelector('.btn');
-const vardas2 = document.querySelector('.input2');
-const btn2 = document.querySelector('.btn2');
-const result = document.querySelector('.result');
-
-function rand(min, max) {
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-};
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-};
 
 // function assignSecretSanta(pool) {
 //     const dovanotojai = [...pool];
@@ -74,6 +48,35 @@ function shuffle(array) {
 //         }
 //     })
 // });
+
+
+const poolRestriction = [
+    ['Močiutė'],
+    ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
+    ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja'],
+    ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
+];
+
+localStorage.setItem('santa', JSON.stringify(null));
+
+
+const vardas2 = document.querySelector('.input2');
+const btn2 = document.querySelector('.btn2');
+const result = document.querySelector('.result');
+
+function rand(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+};
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+};
 
 function makeSecretSanta(groups) {
     const people = groups.flat();
