@@ -1,3 +1,4 @@
+import { poolRestriction } from "./pool.js";
 // const pool = [
 //     'Močiutė',
 //     'Dalia',
@@ -49,13 +50,15 @@
 //     })
 // });
 
+// const poolRestriction = [
+//     ['Močiutė'],
+//     ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
+//     ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja'],
+//     ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
+// ];
 
-const poolRestriction = [
-    ['Močiutė'],
-    ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
-    ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja'],
-    ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
-];
+console.log(poolRestriction);
+
 
 localStorage.setItem('santa', JSON.stringify(null));
 
@@ -63,12 +66,6 @@ localStorage.setItem('santa', JSON.stringify(null));
 const vardas2 = document.querySelector('.input2');
 const btn2 = document.querySelector('.btn2');
 const result = document.querySelector('.result');
-
-function rand(min, max) {
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-};
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -129,18 +126,18 @@ btn2.addEventListener('click', e => {
 
     } else {
         poolRestriction.forEach(e => {
-            if (e.includes(ivestis)) {             
+            if (e.includes(ivestis)) {
                 result.style.color = 'red';
                 result.innerHTML = "Nešnipiniek!";
-                
-            } 
+
+            }
         });
     }
 
     if (JSON.parse(localStorage.getItem('santa')) == null) {
         let poolIndex;
         poolRestriction.forEach(e => {
-            if (e.indexOf(ivestis) > 0) {
+            if (e.indexOf(ivestis) >= 0) {
                 poolIndex = e;
             };
         })
