@@ -112,6 +112,12 @@ pairs.forEach(pair => {
 });
 console.log('-------------------------------------');
 
+vardas2.addEventListener('keydown', e => {
+    if(e.key === "Enter"){
+        if (e.key === "Enter") e.preventDefault();
+    }
+});
+
 btn2.addEventListener('click', e => {
     e.preventDefault();
     let ivestis = vardas2.value;
