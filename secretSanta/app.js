@@ -3,8 +3,8 @@ import { poros } from "./pairs.js";
 
 localStorage.setItem('santa', JSON.stringify(null));
 
-const vardas2 = document.querySelector('.input2');
-const btn2 = document.querySelector('.btn2');
+const vardas = document.querySelector('.input');
+const btn = document.querySelector('.btn');
 const result = document.querySelector('.result');
 
 function shuffle(array) {
@@ -34,16 +34,16 @@ function makeSecretSanta(groups) {
             if (giver === receiver || groupG === groupR) {
                 valid = false;
                 break;
-            } else if(giver === 'Vaidas' && receiver === 'Radvilė'){
+            } else if (giver === 'Vaidas' && receiver === 'Radvilė') {
                 valid = false;
                 break;
-            } else if(giver === 'Ramunė' && receiver === 'Dovydas'){
+            } else if (giver === 'Ramunė' && receiver === 'Dovydas') {
                 valid = false;
                 break;
-            } else if(giver === 'Jurga' && receiver === 'Evaldas'){
+            } else if (giver === 'Jurga' && receiver === 'Evaldas') {
                 valid = false;
                 break;
-            } else if(giver === 'Tomas' && receiver === 'Evaldas'){
+            } else if (giver === 'Tomas' && receiver === 'Evaldas') {
                 valid = false;
                 break;
             }
@@ -59,39 +59,45 @@ console.log('-------------------');
 console.log("Secret Santa Pairs:");
 console.log('-------------------');
 
-console.log(poros);
+const decodedPairs = (new TextDecoder().decode(new Uint8Array(poros)).split(','));
 
-//const pairs = JSON.parse(new TextDecoder().decode(poros));
+const pairs = [];
+for (let i = 0; i < decodedPairs.length; i += 2) {
+    if (i + 1 < decodedPairs.length) {
+        pairs.push([decodedPairs[i], decodedPairs[i + 1]]);
+    }
+}
 
-const data = new TextEncoder().encode(JSON.stringify(pairsS));
-const pairs = JSON.parse(new TextDecoder().decode(data));
+// const data = new TextEncoder().encode(JSON.stringify(pairsS));
+// // // const pairs = JSON.parse(new TextDecoder().decode(data));
 
+// console.log(data);
 
-console.log(data);
-console.log(pairs);
+// localStorage.setItem('data', data);
+// console.log(pairs);
 
 // pairs.forEach(pair => {
 //     console.log(`${pair[0]} -> ${pair[1]}`);
 // });
 // console.log('-------------------------------------');
 
-vardas2.addEventListener('keydown', e => {
-    if(e.key === "Enter"){
+vardas.addEventListener('keydown', e => {
+    if (e.key === "Enter") {
         if (e.key === "Enter") e.preventDefault();
     }
 });
 
-btn2.addEventListener('click', e => {
+btn.addEventListener('click', e => {
     e.preventDefault();
-    let ivestis = vardas2.value;
+    let ivestis = vardas.value;
 
     pairs.forEach(pair => {
-            if (ivestis != pair[0]) {
-                result.style.color = 'white';
-                result.innerHTML = "Tokia varda niera!";
-            }
-        });
-    
+        if (ivestis != pair[0]) {
+            result.style.color = 'white';
+            result.innerHTML = "Tokia varda niera!";
+        }
+    });
+
 
     if (localStorage.getItem('santa').includes(ivestis) || JSON.parse(localStorage.getItem('santa')) == null) {
         pairs.forEach(pair => {
@@ -125,6 +131,6 @@ btn2.addEventListener('click', e => {
         localStorage.setItem('santa', JSON.stringify(poolIndex));
     }
 
-    vardas2.value = '';
+    vardas.value = '';
 
 });

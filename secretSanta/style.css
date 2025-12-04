@@ -41,7 +41,7 @@ body {
   padding: 15px 20px;
   font-size: 24px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: center;
   outline: none;
 }
@@ -56,8 +56,8 @@ body {
   padding: 15px 50px;
   font-size: 24px;
   border: none;
-  border-radius: 10px;
-  background-color: darkblue;
+  border-radius: 20px;
+  background-color: green;
   color: white;
   cursor: pointer;
   transition: all 0.4s ease;
