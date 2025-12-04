@@ -1,67 +1,6 @@
 import { poolRestriction } from "./pool.js";
-// const pool = [
-//     'Močiutė',
-//     'Dalia',
-//     'Algirdas',
-//     'Ramunė',
-//     'Ernestas',
-//     'Vaidas',
-//     'Algimantas',
-//     'Gražina',
-//     'Darius',
-//     'Darija',
-//     'Evaldas',
-//     'Austėja',
-//     'Neringa',
-//     'Emilis',
-//     'Jurga',
-//     'Tomas',
-//     'Dovydas',
-//     'Radvilė'
-// ];
-
-// const vardas = document.querySelector('.input');
-// const btn = document.querySelector('.btn');
-
-// function assignSecretSanta(pool) {
-//     const dovanotojai = [...pool];
-//     let receivers = pool;
-//     while (receivers.some((person, index) => person === dovanotojai[index])) {
-//         receivers = shuffle([...pool]);
-//     };
-//     const poros = dovanotojai.map((dovanotojas, index) => ({ dovanotojas, receiver: receivers[index] }));
-//     return poros;
-// };
-
-// const secretSantaPairs = assignSecretSanta(pool);
-
-// console.log("Secret Santa Pairs FFA:");
-// secretSantaPairs.forEach(pair => {
-//     console.log(`${pair.dovanotojas} -> ${pair.receiver}`);
-// });
-
-// btn.addEventListener('click', e => {
-//     e.preventDefault();
-//     let ivestis = vardas.value
-//     secretSantaPairs.forEach(pair => {
-//         if (ivestis == pair.dovanotojas) {
-//             vardas.value = pair.receiver;
-//         }
-//     })
-// });
-
-// const poolRestriction = [
-//     ['Močiutė'],
-//     ['Dalia', 'Algirdas', 'Ramunė', 'Ernestas', 'Vaidas'],
-//     ['Algimantas', 'Gražina', 'Darius', 'Darija', 'Evaldas', 'Austėja'],
-//     ['Jurga', 'Tomas', 'Dovydas', 'Radvilė']
-// ];
-
-console.log(poolRestriction);
-
 
 localStorage.setItem('santa', JSON.stringify(null));
-
 
 const vardas2 = document.querySelector('.input2');
 const btn2 = document.querySelector('.btn2');
@@ -94,6 +33,18 @@ function makeSecretSanta(groups) {
             if (giver === receiver || groupG === groupR) {
                 valid = false;
                 break;
+            } else if(giver === 'Vaidas' && receiver === 'Radvilė'){
+                valid = false;
+                break;
+            } else if(giver === 'Ramunė' && receiver === 'Dovydas'){
+                valid = false;
+                break;
+            } else if(giver === 'Jurga' && receiver === 'Evaldas'){
+                valid = false;
+                break;
+            } else if(giver === 'Tomas' && receiver === 'Evaldas'){
+                valid = false;
+                break;
             }
             pairs.push([giver, receiver]);
         }
@@ -103,9 +54,9 @@ function makeSecretSanta(groups) {
 }
 
 const pairs = makeSecretSanta(poolRestriction);
-console.log('-------------------------------------');
-console.log("Secret Santa Pairs with restrictions:");
-console.log('-------------------------------------');
+console.log('-------------------');
+console.log("Secret Santa Pairs:");
+console.log('-------------------');
 
 pairs.forEach(pair => {
     console.log(`${pair[0]} -> ${pair[1]}`);
@@ -121,6 +72,14 @@ vardas2.addEventListener('keydown', e => {
 btn2.addEventListener('click', e => {
     e.preventDefault();
     let ivestis = vardas2.value;
+
+    pairs.forEach(pair => {
+            if (ivestis != pair[0]) {
+                result.style.color = 'white';
+                result.innerHTML = "Tokia varda niera!";
+            }
+        });
+    
 
     if (localStorage.getItem('santa').includes(ivestis) || JSON.parse(localStorage.getItem('santa')) == null) {
         pairs.forEach(pair => {
