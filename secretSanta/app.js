@@ -1,11 +1,14 @@
 import { poolRestriction } from "./pool.js";
 import { poros } from "./pairs.js";
 
-localStorage.setItem('santa', JSON.stringify(null));
+if (!localStorage.getItem('santa')) {
+    localStorage.setItem('santa', JSON.stringify(null));
+}
 
 const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
 const result = document.querySelector('.result');
+const reset = document.querySelector('.reset');
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -68,13 +71,9 @@ for (let i = 0; i < decodedPairs.length; i += 2) {
     }
 }
 
-// const data = new TextEncoder().encode(JSON.stringify(pairsS));
-// // // const pairs = JSON.parse(new TextDecoder().decode(data));
+// const data = new TextEncoder().encode(pairsS);
 
-// console.log(data);
-
-// localStorage.setItem('data', data);
-// console.log(pairs);
+// console.log(Array.from(data));
 
 // pairs.forEach(pair => {
 //     console.log(`${pair[0]} -> ${pair[1]}`);
@@ -133,4 +132,8 @@ btn.addEventListener('click', e => {
 
     vardas.value = '';
 
+});
+
+reset.addEventListener("click", e => {
+    localStorage.setItem('santa', JSON.stringify(null));
 });
