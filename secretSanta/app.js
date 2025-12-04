@@ -1,4 +1,5 @@
 import { poolRestriction } from "./pool.js";
+import { poros } from "./pairs.js";
 
 localStorage.setItem('santa', JSON.stringify(null));
 
@@ -53,15 +54,26 @@ function makeSecretSanta(groups) {
     }
 }
 
-const pairs = makeSecretSanta(poolRestriction);
+const pairsS = makeSecretSanta(poolRestriction);
 console.log('-------------------');
 console.log("Secret Santa Pairs:");
 console.log('-------------------');
 
-pairs.forEach(pair => {
-    console.log(`${pair[0]} -> ${pair[1]}`);
-});
-console.log('-------------------------------------');
+console.log(poros);
+
+//const pairs = JSON.parse(new TextDecoder().decode(poros));
+
+const data = new TextEncoder().encode(JSON.stringify(pairsS));
+const pairs = JSON.parse(new TextDecoder().decode(data));
+
+
+console.log(data);
+console.log(pairs);
+
+// pairs.forEach(pair => {
+//     console.log(`${pair[0]} -> ${pair[1]}`);
+// });
+// console.log('-------------------------------------');
 
 vardas2.addEventListener('keydown', e => {
     if(e.key === "Enter"){
