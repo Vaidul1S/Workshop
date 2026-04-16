@@ -57,7 +57,6 @@ function makeSecretSanta(groups) {
     }
 }
 
-const pairsS = makeSecretSanta(poolRestriction);
 console.log('-------------------');
 console.log("Secret Santa Pairs:");
 console.log('-------------------');
@@ -71,8 +70,9 @@ for (let i = 0; i < decodedPairs.length; i += 2) {
     }
 }
 
+// make new encode pairs, right click on console and right click copy pasta object
+// const pairsS = makeSecretSanta(poolRestriction);
 // const data = new TextEncoder().encode(pairsS);
-
 // console.log(Array.from(data));
 
 // pairs.forEach(pair => {
