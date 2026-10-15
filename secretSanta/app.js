@@ -70,14 +70,16 @@ for (let i = 0; i < decodedPairs.length; i += 2) {
     }
 }
 
-// make new encode pairs, right click on console and right click copy pasta object
+// make new encode pairs, right click on console and right click copy pasta OBJECT
 // const pairsS = makeSecretSanta(poolRestriction);
 // const data = new TextEncoder().encode(pairsS);
 // console.log(Array.from(data));
 
-// pairs.forEach(pair => {
-//     console.log(`${pair[0]} -> ${pair[1]}`);
-// });
+// // pairs.forEach(pair => {
+// //     console.log(`${pair[0]} -> ${pair[1]}`);
+// // });
+
+// console.log('pairs.js UPDATED!');
 // console.log('-------------------------------------');
 
 vardas.addEventListener('keydown', e => {
