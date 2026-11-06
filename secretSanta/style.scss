@@ -9,7 +9,7 @@
 }
 @keyframes rotate1 {
     0% {
-        transform: scale(2.2) rotate(0); opacity: 0;
+        transform: scale(10) rotate(0); opacity: 0;
     }    
     100% {
         transform: scale(1) rotate(1440deg); opacity: 1;
@@ -32,7 +32,7 @@ body {
     font-family: 'Gluten';
 }
 .image {    
-    width: 200px;
+    width: 300px;
     padding: 20px;
     margin-bottom: 100px;
     animation: rotate1 4s;       
