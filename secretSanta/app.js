@@ -94,7 +94,7 @@ btn.addEventListener('click', e => {
 
     pairs.forEach(pair => {
         if (ivestis != pair[0]) {
-            result.style.color = 'white';
+            result.style.color = 'blue';
             result.innerHTML = "Tokia varda niera!";
         }
     });
@@ -103,7 +103,7 @@ btn.addEventListener('click', e => {
     if (localStorage.getItem('santa').includes(ivestis) || JSON.parse(localStorage.getItem('santa')) == null) {
         pairs.forEach(pair => {
             if (ivestis == pair[0]) {
-                result.style.color = 'white';
+                result.style.color = 'blue';
                 result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
             }
         });
