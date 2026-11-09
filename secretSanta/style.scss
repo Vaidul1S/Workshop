@@ -49,8 +49,8 @@ body {
     h1 {
         font-family: 'Gluten';
         font-size: 38px;
-        color: white;
-        text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px #0000ff;
+        color: blue;
+        text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green
     }
 
     .formContainer {
@@ -62,7 +62,7 @@ body {
         h2 {
             font-family: 'Gluten';
             font-size: 28px;
-            color: white;
+            color: blue;
             margin-top: 15px;
         }
 
@@ -77,10 +77,10 @@ body {
             outline: none;
         }
         .text {
-            color: white;
-            font-size: 16px;
+            color: blue;
+            font-size: 18px;
             margin: 10px 0;
-            text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px #0000ff;
+            text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green;
         }
 
         .btn {
@@ -88,18 +88,18 @@ body {
             font-size: 24px;
             border: none;
             border-radius: 20px;
-            background-color: green;
-            color: white;
+            background-color: blue;
+            color: #ff0000;
             cursor: pointer;
             transition: all 0.4s ease;
 
             &:hover {
-                background-color: aqua;
-                color: darkmagenta;
+                background-color: red;
+                color: blue;
             }
         }
         .result {
-            text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px #0000ff;
+            text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green;
         }
     }
 }
