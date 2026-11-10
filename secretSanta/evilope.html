@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Opening envelope</title>
+<style>
+:root{
+  --bg:#dfe7ec; --ink:#243038; --paper:#fffdf7; --env-back:#b9c7d0; --env-front:#cbd8e0;
+  --env-flap:#d6e1e8; --seal:#a8322d; --shadow:rgba(36,48,56,.25);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#182026; --ink:#e6edf1; --paper:#f4efe2; --env-back:#4a5b66; --env-front:#5a6c78;
+    --env-flap:#667a87; --seal:#c24a43; --shadow:rgba(0,0,0,.5);
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3.5rem;
+}
+
+/* ---- envelope ---- */
+.scene{perspective:1000px}
+.envelope{
+  --w:min(80vw,320px); --h:calc(var(--w)*.65);
+  position:relative; width:var(--w); height:var(--h);
+  background:var(--env-back); border-radius:6px;
+  box-shadow:0 18px 30px -12px var(--shadow);
+  cursor:pointer; border:0; padding:0; display:block;
+  transition:transform .6s ease .1s;
+}
+.envelope:focus-visible{outline:3px solid var(--ink); outline-offset:6px}
+
+/* letter */
+.letter{
+  position:absolute; left:7%; right:7%; bottom:6%; height:82%;
+  background:var(--paper); border-radius:3px; padding:1.1rem 1rem;
+  box-shadow:0 1px 4px var(--shadow); color:#2b2b2b;
+  transition:transform .7s cubic-bezier(.3,.7,.3,1);
+  z-index:1; text-align:left;
+}
+.letter h2{margin:0 0 .5rem; font-size:1.05rem; font-weight:700}
+.letter i{display:block; height:5px; border-radius:3px; background:#cfc8b6; margin:.5rem 0}
+.letter i:nth-child(3){width:85%}
+.letter i:nth-child(4){width:92%}
+.letter i:nth-child(5){width:60%}
+
+/* front pocket */
+.pocket{
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:var(--env-front); border-radius:6px;
+  clip-path:polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%);
+}
+.pocket::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.08), transparent 55%);
+}
+
+/* flap */
+.flap{
+  position:absolute; top:0; left:0; width:100%; height:55%;
+  transform-origin:top center; z-index:3;
+  transition:transform .55s ease .25s, z-index 0s .55s;
+  transform-style:preserve-3d;
+}
+.flap::before{
+  content:""; position:absolute; inset:0; background:var(--env-flap);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  filter:drop-shadow(0 2px 2px var(--shadow));
+  border-radius:6px 6px 0 0;
+}
+.seal{
+  position:absolute; left:50%; top:calc(100% - 22px); width:34px; height:34px; margin-left:-17px;
+  border-radius:50%; background:var(--seal);
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.2), 0 2px 4px var(--shadow);
+  transition:opacity .25s ease;
+}
+.seal::after{content:""; position:absolute; inset:9px; border-radius:50%; border:2px solid rgba(255,255,255,.35)}
+
+/* ---- open state ---- */
+.envelope[aria-expanded="true"] .flap{transform:rotateX(180deg); z-index:0}
+.envelope[aria-expanded="true"] .seal{opacity:0}
+.envelope[aria-expanded="true"] .letter{transform:translateY(-62%)}
+.envelope[aria-expanded="true"]{transform:translateY(34px)}
+
+.hint{font-size:.95rem; opacity:.75; margin:0; min-height:1.4em}
+
+@media (prefers-reduced-motion:reduce){
+  .envelope,.flap,.letter,.seal{transition-duration:.01s; transition-delay:0s}
+}
+</style>
+</head>
+<body>
+  <div class="scene">
+    <button class="envelope" id="env" aria-expanded="false" aria-label="Open the envelope">
+      <div class="letter">
+        <h2>You're invited</h2>
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="pocket"></div>
+      <div class="flap"><div class="seal"></div></div>
+    </button>
+  </div>
+  <p class="hint" id="hint">Tap the envelope to open it</p>
+
+<script>
+  const env = document.getElementById('env');
+  const hint = document.getElementById('hint');
+  env.addEventListener('click', () => {
+    const open = env.getAttribute('aria-expanded') === 'true';
+    env.setAttribute('aria-expanded', String(!open));
+    env.setAttribute('aria-label', open ? 'Open the envelope' : 'Close the envelope');
+    hint.textContent = open ? 'Tap the envelope to open it' : 'Tap again to close it';
+  });
+</script>
+</body>
+</html>
