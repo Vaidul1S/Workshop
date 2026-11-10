@@ -97,7 +97,6 @@ body {
         .btn {
             padding: 15px 50px;
             font-family: 'Gluten';
-
             font-size: 22px;
             border: none;
             border-radius: 20px;
@@ -106,6 +105,7 @@ body {
             text-shadow: 2px -1px 5px blue, 2px -1px 5px green;
             cursor: pointer;
             transition: all 0.4s ease;
+            box-shadow: 1px -1px 3px red;
 
             &:hover {
                 background-color: red;
