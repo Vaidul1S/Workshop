@@ -96,7 +96,7 @@ body {
             text-align: center;
             outline: none;
             box-shadow: 1px -1px 3px red, 2px -1px 5px #008000;
-            background-color: transparent;
+            background-color: opacify($color: #ffffff30, $amount: 0.1);
         }
 
         .text {
