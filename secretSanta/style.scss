@@ -49,8 +49,10 @@ body {
 }
 
 ::placeholder {
+    font-family: 'Gluten';
     color: blue;
-    opacity: 0.5;
+    text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green;
+    opacity: 0.7;
 }
 
 .buttonContainer {
@@ -65,7 +67,7 @@ body {
         font-family: 'Gluten';
         font-size: 38px;
         color: blue;
-        text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green
+        text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green;
     }
 
     .formContainer {
