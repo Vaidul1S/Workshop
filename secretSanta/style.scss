@@ -18,6 +18,7 @@
     100% {
         transform: scale(1) rotate(1440deg);
         opacity: 1;
+
     }
 }
 
@@ -39,6 +40,8 @@ body {
     padding: 0 30px;
     text-align: center;
     font-family: 'Gluten';
+    overflow: hidden;
+
 }
 
 .image {
@@ -46,6 +49,7 @@ body {
     padding: 20px;
     margin-bottom: 70px;
     animation: rotate1 4s;
+
 }
 
 ::placeholder {
@@ -132,7 +136,7 @@ body {
     }
 
     .envelope {
-        width: 50%;
+        width: 85%;
         display: flex;
         justify-content: center;
         position: absolute;
@@ -149,8 +153,8 @@ body {
         }
 
         .sheet {
-            width: 100%;
-            height: 20rem;
+            width: 65%;
+            height: 5rem;
             background-color: #f5f5dc;
         }
 
