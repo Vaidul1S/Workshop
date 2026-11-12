@@ -36,7 +36,7 @@
 
 @keyframes open {}
 
-.button[open="true"] .flap {
+.envelope[open="true"] .flap {
       transform: rotateX(180deg);
       z-index: 0
     }
