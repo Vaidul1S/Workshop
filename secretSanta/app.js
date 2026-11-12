@@ -9,6 +9,7 @@ const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
 const result = document.querySelector('.result');
 const reset = document.querySelector('.reset');
+const open_button = document.getElementById('button');
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -139,3 +140,9 @@ btn.addEventListener('click', e => {
 reset.addEventListener("click", e => {
     localStorage.setItem('santa', JSON.stringify(null));
 });
+
+open_button.addEventListener('click', e => {
+    e.preventDefault();
+    const opened = open_button.getAttribute('open') === 'true';
+    open_button.setAttribute('open', String(!opened));
+})
