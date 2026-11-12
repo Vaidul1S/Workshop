@@ -144,9 +144,9 @@ body {
 
         .flap {
             position: absolute;
-            bottom: 10rem;
+            bottom: 16rem;
             width: 80%;
-            height: 5rem;
+            height: 8rem;
             background-color: #f5f5dc50;
             border: 1px solid black;
             border-radius: 5px 5px 0 0;
@@ -154,7 +154,7 @@ body {
 
         .sheet {
             width: 65%;
-            height: 5rem;
+            height: 8rem;
             background-color: #f5f5dc;
         }
 
@@ -162,10 +162,10 @@ body {
             position: absolute;
             bottom: 0;
             width: 80%;
-            height: 10rem;
+            height: 16rem;
             border: 1px solid black;
             background-color: #f5f5dc50;
-            border-radius: 0 0 6px 6px;
+            border-radius: 5px;
         }
     }
 }
