@@ -9,6 +9,7 @@ const vardas = document.querySelector('.input');
 const btn = document.querySelector('.btn');
 const result = document.querySelector('.result');
 const reset = document.querySelector('.reset');
+const env = document.getElementById('envelope');
 const open_button = document.getElementById('button');
 
 function shuffle(array) {
@@ -143,6 +144,6 @@ reset.addEventListener("click", e => {
 
 open_button.addEventListener('click', e => {
     e.preventDefault();
-    const opened = open_button.getAttribute('open') === 'true';
-    open_button.setAttribute('open', String(!opened));
+    const opened = env.getAttribute('open') === 'true';
+    env.setAttribute('open', String(!opened));
 })
