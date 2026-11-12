@@ -34,6 +34,8 @@
     }
 }
 
+@keyframes open {}
+
 body {
     height: 100vh;
     background-image: url("xmas2.jpg");
@@ -144,29 +146,40 @@ body {
 
         .flap {
             position: absolute;
-            bottom: 7rem;
-            width: 80%;
-            height: 7rem;
+            bottom: 6rem;
+            width: 90%;
+            height: 6rem;
             background-color: #f5f5dc50;
             border: 1px solid black;
             border-radius: 5px 5px 0 0;
             clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top center;
+            z-index: 3;
+            transition: transform .55s ease .25s, z-index 0s .55s;
+            transform-style: preserve-3d;
         }
 
         .sheet {
             width: 65%;
-            height: 6rem;
+            height: 5rem;
             background-color: #f5f5dc;
         }
 
         .letter {
             position: absolute;
             bottom: 0;
-            width: 80%;
-            height: 14rem;
+            width: 90%;
+            height: 12rem;
             border: 1px solid black;
             background-color: #f5f5dc50;
             border-radius: 5px;
+        }
+        .button {
+            position: absolute;
+            width: 30%;
+            bottom: -4rem;
+            height: 2rem;
+            border-radius: 10px;
         }
     }
 }
