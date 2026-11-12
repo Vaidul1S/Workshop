@@ -133,15 +133,19 @@ body {
 
     .envelope {
         width: 50%;
-        
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 5rem;
+
         .flap {
             position: absolute;
             bottom: 10rem;
-            left: 0;
             width: 80%;
             height: 5rem;
             background-color: #f5f5dc50;
             border: 1px solid black;
+            border-radius: 5px 5px 0 0;
         }
 
         .sheet {
@@ -153,11 +157,11 @@ body {
         .letter {
             position: absolute;
             bottom: 0;
-            left: 0;
             width: 80%;
             height: 10rem;
-            // border: 1px solid black;
+            border: 1px solid black;
             background-color: #f5f5dc50;
+            border-radius: 0 0 6px 6px;
         }
     }
 }
