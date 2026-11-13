@@ -42,7 +42,7 @@
 }
 
 .envelope[open="true"] .sheet {
-    transform: translateY(-62%);
+    transform: translateY(-75%);
     z-index: 1;
 }
 
@@ -176,7 +176,7 @@ body {
             z-index: 3;
         }
 
-        .sheet {            
+        .sheet {       
             width: 75%;
             height: 8rem;
             background-color: #f5f5dccc;
@@ -185,9 +185,12 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            .card {
+                font-size: 20px;
+            }
         }
 
-        .sheet::before {
+        .sheet::before {              
             z-index: 0;
             position: absolute;
             
