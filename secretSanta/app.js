@@ -107,7 +107,7 @@ btn.addEventListener('click', e => {
         pairs.forEach(pair => {
             if (ivestis == pair[0]) {
                 result.style.color = 'blue';
-                result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
+                result.innerHTML = " ";
                 sheet.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
                 const opened = env.getAttribute('open') === 'true';
                 env.setAttribute('open', String(!opened));
@@ -150,4 +150,5 @@ open_button.addEventListener('click', e => {
     e.preventDefault();
     const opened = env.getAttribute('open') === 'true';
     env.setAttribute('open', String(!opened));
+    result.innerHTML = " ";
 })

@@ -37,7 +37,7 @@
 @keyframes open {}
 
 .envelope[open="true"] {
-    transform: translateY(-17rem);    
+    transform: translateY(-37rem);    
     
 }
 
@@ -155,7 +155,7 @@ body {
     .envelope {
         width: 90%;
         height: 12rem;        
-        bottom: -12rem;
+        bottom: -32rem;
         display: flex;
         justify-content: center;
         position: absolute;
@@ -198,7 +198,10 @@ body {
             top: 0;
             right: 0;
             border: none;
-            background-color: #f5f5dccc;
+            background-color: transparent;
+            margin: 0;
+            padding: 2px;
+            font-family: 'Gluten';
         }
         }
 
