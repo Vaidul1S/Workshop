@@ -11,6 +11,7 @@ const result = document.querySelector('.result');
 const reset = document.querySelector('.reset');
 const env = document.getElementById('envelope');
 const open_button = document.getElementById('button');
+const sheet = document.getElementById('sheet');
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -107,6 +108,7 @@ btn.addEventListener('click', e => {
             if (ivestis == pair[0]) {
                 result.style.color = 'blue';
                 result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
+                sheet.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
             }
         });
 
