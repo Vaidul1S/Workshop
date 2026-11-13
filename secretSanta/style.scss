@@ -41,6 +41,11 @@
     z-index: 0
 }
 
+.envelope[open="true"] .sheet {
+    transform: translateY(-62%);
+    z-index: 1;
+}
+
 body {
     height: 100vh;
     background-image: url("xmas2.jpg");
@@ -171,10 +176,18 @@ body {
             z-index: 3;
         }
 
-        .sheet {
+        .sheet {            
             width: 75%;
-            height: 5rem;
-            background-color: #f5f5dc;
+            height: 8rem;
+            background-color: #f5f5dccc;
+            transition: transform .7s;
+            
+            margin: auto;
+        }
+
+        .sheet::before {
+            z-index: 0;
+            position: absolute;
         }
 
         .letter {
@@ -186,7 +199,7 @@ body {
             background-image: url("env.png");            
             border-radius: 5px;
             clip-path: polygon(0 0, 0 5%, 50% 50%, 100% 5%, 100% 100%, 0 100%);
-            z-index: 0;
+            z-index: 2;
 
         }
 
