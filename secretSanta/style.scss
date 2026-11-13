@@ -36,6 +36,11 @@
 
 @keyframes open {}
 
+.envelope[open="true"] {
+    transform: translateY(-17rem);    
+    
+}
+
 .envelope[open="true"] .flap {
     transform: rotateX(180deg);
     z-index: 0
@@ -149,11 +154,11 @@ body {
 
     .envelope {
         width: 90%;
-        height: 12rem;
+        height: 12rem;        
+        bottom: -12rem;
         display: flex;
         justify-content: center;
         position: absolute;
-        top: 5rem;
         background-color: #242423;
 
 
@@ -216,5 +221,6 @@ body {
             height: 2rem;
             border-radius: 10px;
         }
-    }
+    }    
+    
 }

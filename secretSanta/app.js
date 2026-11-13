@@ -109,6 +109,8 @@ btn.addEventListener('click', e => {
                 result.style.color = 'blue';
                 result.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
                 sheet.innerHTML = pair[0] + ' -> 🎁 ' + pair[1];
+                const opened = env.getAttribute('open') === 'true';
+                env.setAttribute('open', String(!opened));
             }
         });
 
