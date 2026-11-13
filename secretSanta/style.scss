@@ -193,6 +193,13 @@ body {
             .card {
                 font-size: 20px;
             }
+            .button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: #f5f5dccc;
+        }
         }
 
         .sheet::before {              
@@ -213,14 +220,7 @@ body {
             z-index: 2;
 
         }
-
-        .button {
-            position: absolute;
-            width: 30%;
-            bottom: -4rem;
-            height: 2rem;
-            border-radius: 10px;
-        }
+        
     }    
     
 }
