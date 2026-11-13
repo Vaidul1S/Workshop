@@ -180,14 +180,17 @@ body {
             width: 75%;
             height: 8rem;
             background-color: #f5f5dccc;
-            transition: transform .7s;
-            
-            margin: auto;
+            transition: transform .7s 1s;  
+            margin: auto;          
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .sheet::before {
             z-index: 0;
             position: absolute;
+            
         }
 
         .letter {
