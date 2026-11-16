@@ -55,7 +55,6 @@
 body {
     height: 100vh;
     background-image: url("xmas2.jpg");
-    padding: 0 30px;
     text-align: center;
     font-family: 'Gluten';
     overflow: hidden;
@@ -93,6 +92,7 @@ body {
     }
 
     .formContainer {
+        width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -106,7 +106,7 @@ body {
         }
 
         input {
-            width: 95%;
+            width: 100%;
             margin: 20px 0;
             padding: 15px 20px;
             font-size: 24px;
