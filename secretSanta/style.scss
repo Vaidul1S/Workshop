@@ -163,7 +163,7 @@ body {
         display: flex;
         justify-content: center;
         position: absolute;
-        background-color: #561b1b;
+        background-color: #292929;
         border-radius: 5px;
 
         .flap {
@@ -171,7 +171,7 @@ body {
             bottom: 6rem;
             width: 100%;
             height: 6rem;
-            background-image: url("env2.png");
+            background-image: url("env1.jpg");
             border: 2px dashed blue;
             border-radius: 5px 5px 0 0;
             clip-path: polygon(0 0, 100% 0, 100% 10%, 52% 100%, 48% 100%, 0 10%);
@@ -188,7 +188,7 @@ body {
         .sheet {
             width: 75%;
             height: 8rem;
-            background-color: #8b0000df;
+            background-color: #740000ef;
             transition: transform .7s 1s;
             margin: auto;
             display: flex;
@@ -223,7 +223,7 @@ body {
             width: 100%;
             height: 12rem;
             border: 2px dashed blue;
-            background-image: url("env2.png");
+            background-image: url("env1.jpg");
             border-radius: 5px;
             clip-path: polygon(0 0, 0 5%, 50% 50%, 100% 5%, 100% 100%, 0 100%);
             z-index: 2;
