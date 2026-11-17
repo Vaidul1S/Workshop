@@ -172,7 +172,7 @@ body {
             width: 100%;
             height: 6rem;
             background-image: url("env1.jpg");
-            border: 2px dashed blue;
+            border: 2px dashed darkred;
             border-radius: 10px;
             clip-path: polygon(0 0, 100% 0, 100% 10%, 52% 100%, 48% 100%, 0 10%);
             transform-origin: top center;
@@ -222,7 +222,7 @@ body {
             bottom: 0;
             width: 100%;
             height: 12rem;
-            border: 2px dashed blue;
+            border: 2px dashed darkred;
             background-image: url("env1.jpg");
             border-radius: 10px;
             clip-path: polygon(0 0, 0 5%, 50% 50%, 100% 5%, 100% 100%, 0 100%);
