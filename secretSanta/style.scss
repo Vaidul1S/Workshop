@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 @font-face {
@@ -19,7 +18,6 @@
     100% {
         transform: scale(1) rotate(1440deg);
         opacity: 1;
-
     }
 }
 
@@ -57,7 +55,6 @@ body {
     text-align: center;
     font-family: 'Gluten';
     overflow: hidden;
-
 }
 
 .image {
@@ -65,7 +62,6 @@ body {
     padding: 20px;
     margin-bottom: 70px;
     animation: rotate1 4s;
-
 }
 
 ::placeholder {
@@ -227,9 +223,6 @@ body {
             border-radius: 10px;
             clip-path: polygon(0 0, 0 5%, 50% 50%, 100% 5%, 100% 100%, 0 100%);
             z-index: 2;
-
         }
-
     }
-
 }
