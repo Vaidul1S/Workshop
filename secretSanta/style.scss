@@ -33,6 +33,16 @@
     }
 }
 
+@keyframes rotate3 {
+    0% {        
+        transform: rotate(0);
+    }
+
+    100% {        
+        transform: rotate(21600deg);
+    }
+}
+
 @keyframes open {}
 
 .envelope[open="true"] {
@@ -61,7 +71,7 @@ body {
     width: 300px;
     padding: 20px;
     margin-bottom: 70px;
-    animation: rotate1 4s;
+    animation: rotate3 300s infinite;
     fill: #008000;
 }
 
