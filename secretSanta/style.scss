@@ -9,18 +9,6 @@
     src: url(./Gluten.ttf);
 }
 
-@keyframes rotate1 {
-    0% {
-        transform: scale(20) rotate(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1) rotate(1440deg);
-        opacity: 1;
-    }
-}
-
 @keyframes rotate2 {
     0% {
         transform-origin: top left;
@@ -59,9 +47,7 @@ body {
 
 .image {
     width: 300px;
-    padding: 20px;
-    margin-bottom: 70px;
-    
+    padding: 20px;   
 }
 
 ::placeholder {
@@ -87,6 +73,7 @@ body {
         color: blue;
         text-shadow: 2px -1px 5px #ff0000, 2px -1px 5px green;
         letter-spacing: 4px;
+        margin: 20px 0;
     }
 
     .formContainer {
