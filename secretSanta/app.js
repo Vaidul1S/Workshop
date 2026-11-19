@@ -157,9 +157,12 @@ let dr = 0.5;
 let angle = 0;
 function spin() {
     const img = document.getElementById("image");
-    angle += dr;
+    angle += dr;    
     img.style.rotate = `${angle}deg`;
     requestAnimationFrame(spin);
+    if (angle === 360) {
+        angle = 0;
+    }
 }
 
 spin();
