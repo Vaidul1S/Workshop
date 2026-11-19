@@ -155,10 +155,10 @@ open_button.addEventListener('click', e => {
 
 let dr = 0.5;
 let angle = 0;
-function spin(){
-    const img = document.getElementById("image");      
+function spin() {
+    const img = document.getElementById("image");
     angle += dr;
-    img.style.rotate = `${angle}deg`;           
+    img.style.rotate = `${angle}deg`;
     requestAnimationFrame(spin);
 }
 
