@@ -152,3 +152,14 @@ open_button.addEventListener('click', e => {
     env.setAttribute('open', String(!opened));
     result.innerHTML = " ";
 })
+
+function spin(){
+    const img = document.getElementById("image");
+
+    img.style.rotate('45deg');
+
+    requestAnimationFrame(spin);
+
+}
+
+spin();
