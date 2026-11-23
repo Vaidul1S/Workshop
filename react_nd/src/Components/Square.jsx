@@ -1,5 +1,5 @@
-export default function Square({color}) {
-   
+export default function Square({ color }) {
+
     return (
         <div style={{
             width: 50 + 'px',
@@ -7,7 +7,7 @@ export default function Square({color}) {
             backgroundColor: color,
             borderRadius: '3px',
             margin: '20px',
-            transition: 'all 0.5s',            
+            transition: 'all 0.5s',
         }}>
         </div>
     );
