@@ -1,4 +1,4 @@
-export default function ZaB({color}) {
+export default function ZaB({ color }) {
     if (color === 1) {
         color = 'blue';
     } else {
@@ -6,8 +6,8 @@ export default function ZaB({color}) {
     }
 
     return (
-    <h3 style={{
-        color: color
-    }}>Zebrai ir Bebrai</h3>
+        <h3 style={{
+            color: color
+        }}>Zebrai ir Bebrai</h3>
     )
 }

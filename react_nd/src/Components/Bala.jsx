@@ -7,9 +7,9 @@ export default function Bala({ array }) {
             const text = document.createElement('div');
             text.innerText = `${e[i].id} ${e[i].type} ${e[i].name} ${e[i].color}`;
             console.log(text);
-            
+
         }
-        
+
     }
 
     return (
